@@ -6,8 +6,8 @@
   <artifactId>petclinic</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
-  <!--Projeye göre jar yada war olabilir(jsp için), default jar-->
-  <packaging>jar</packaging>
+  <!--Projeye göre jar yada war olabilir(güvenli birşekilde jsp kullanabilmek için), default jar-->
+  <packaging>war</packaging>
   
   <parent>
   	<groupId>org.springframework.boot</groupId>
