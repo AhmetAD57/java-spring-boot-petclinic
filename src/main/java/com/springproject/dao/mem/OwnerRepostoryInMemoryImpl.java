@@ -13,26 +13,26 @@ import org.springframework.stereotype.Repository;
 import com.springproject.dao.OwnerRepostory;
 import com.springproject.model.Owner;
 
-@Repository//Spring container çalışma zamanında bir bean oluşturur.
-public class OwnerRepostoryInMemoryImpl implements OwnerRepostory{
+@Repository // Spring container çalışma zamanında bir bean oluşturur.
+public class OwnerRepostoryInMemoryImpl implements OwnerRepostory {
 
 	private Map<Long, Owner> ownersMap = new HashMap<>();
-	
+
 	public OwnerRepostoryInMemoryImpl() {
 		Owner owner1 = new Owner();
 		owner1.setId(1L);
 		owner1.setFirtName("Cafe");
 		owner1.setLastName("Nuri");
-		
+
 		Owner owner2 = new Owner();
 		owner2.setId(5L);
 		owner2.setFirtName("Tim");
 		owner2.setLastName("Cook");
-		
+
 		ownersMap.put(owner1.getId(), owner1);
 		ownersMap.put(owner2.getId(), owner2);
 	}
-	
+
 	@Override
 	public List<Owner> findAll() {
 		return new ArrayList<>(ownersMap.values());
@@ -52,7 +52,7 @@ public class OwnerRepostoryInMemoryImpl implements OwnerRepostory{
 	public void create(Owner owner) {
 		owner.setId(new Date().getTime());
 		ownersMap.put(owner.getId(), owner);
-		
+
 	}
 
 	@Override
@@ -64,7 +64,7 @@ public class OwnerRepostoryInMemoryImpl implements OwnerRepostory{
 	@Override
 	public void delete(Long id) {
 		ownersMap.remove(id);
-		
+
 	}
 
 }

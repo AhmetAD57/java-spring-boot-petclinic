@@ -14,7 +14,7 @@ public interface PetClinicService {
 	
 	void createOwner(Owner owner);
 	// güncellemede Pet döndürmesinin nedeni JPA, Hybernet(ORM) de verilen nesne ile  güncellenen nesnenin farkı  referanslı olmasından dolayı
-	void update(Owner owner);
+	void updateOwner(Owner owner);
 	void deleteOwner(Long id);
 	
 }

@@ -1,3 +1,4 @@
 logging:
   level:
-    org.springframework.web: debug  file:    name: petclinic.log
+    org.springframework.web: debug
+  file: petclinic.log

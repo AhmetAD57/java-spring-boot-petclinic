@@ -2,8 +2,8 @@ package com.springproject.dao;
 
 import java.util.List;
 
-import com.springproject.model.Owner;
 import com.springproject.model.Pet;
+
 public interface PetRepostory {
 	Pet findById(Long id);
 	List<Pet> findByOwnerId(Long id);

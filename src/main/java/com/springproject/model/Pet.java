@@ -2,13 +2,12 @@ package com.springproject.model;
 
 import java.util.Date;
 
-
 //Domain class
 public class Pet {
 	private Long id;
 	private String name;
 	private Date birthDay;
-	
+
 	private Owner owner;
 
 	public Long getId() {
@@ -47,5 +46,5 @@ public class Pet {
 	public String toString() {
 		return "Pet [id=" + id + ", name=" + name + ", birthDay=" + birthDay + ", owner=" + owner + "]";
 	}
-		
+
 }
