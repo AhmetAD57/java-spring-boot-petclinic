@@ -22,8 +22,6 @@ public class PetClinicController {
 		mav.addObject("owners", petClinicService.findOwners());
 		mav.setViewName("owners");
 		return mav;
-		
-		
 	}
 	
 	
@@ -31,7 +29,7 @@ public class PetClinicController {
 	@RequestMapping("/pcs")
 	@ResponseBody//View olarak döndürülmesini önlemek için kullanılır
 	public String welcome() { //Handler metot
-		return "Welcome to pet clinic";
+		return "Welcome to pet clinic.";
 	}
 
 }

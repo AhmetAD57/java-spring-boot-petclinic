@@ -6,7 +6,7 @@ import java.util.Set;
 //Domain class
 public class Owner {
 	private Long id;
-	private String FirtName;
+	private String firstName;
 	private String lastName;
 	
 	private Set<Pet> pets = new HashSet<>();
@@ -19,12 +19,12 @@ public class Owner {
 		this.id = id;
 	}
 
-	public String getFirtName() {
-		return FirtName;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirtName(String firtName) {
-		FirtName = firtName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	public String getLastName() {
@@ -45,6 +45,6 @@ public class Owner {
 
 	@Override
 	public String toString() {
-		return "Owner [id=" + id + ", FirtName=" + FirtName + ", lastName=" + lastName + "]";
+		return "Owner [id=" + id + ", FirtName=" + firstName + ", lastName=" + lastName + "]";
 	}
 }

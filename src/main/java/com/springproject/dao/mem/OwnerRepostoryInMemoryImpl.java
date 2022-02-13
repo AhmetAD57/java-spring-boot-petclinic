@@ -21,16 +21,22 @@ public class OwnerRepostoryInMemoryImpl implements OwnerRepostory {
 	public OwnerRepostoryInMemoryImpl() {
 		Owner owner1 = new Owner();
 		owner1.setId(1L);
-		owner1.setFirtName("Cafe");
+		owner1.setFirstName("Cafe");
 		owner1.setLastName("Nuri");
 
 		Owner owner2 = new Owner();
 		owner2.setId(5L);
-		owner2.setFirtName("Tim");
+		owner2.setFirstName("Tim");
 		owner2.setLastName("Cook");
+		
+		Owner owner3 = new Owner();
+		owner3.setId(4L);
+		owner3.setFirstName("Rock");
+		owner3.setLastName("Dog");
 
 		ownersMap.put(owner1.getId(), owner1);
 		ownersMap.put(owner2.getId(), owner2);
+		ownersMap.put(owner3.getId(), owner3);
 	}
 
 	@Override

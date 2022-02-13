@@ -14,6 +14,6 @@ public class PetClinicConfiguration {
 	//Spring Container tarafından ilgili sınıftan bir nesne oluşturulup bağımlılıkları enjekte edildikten sonra otomatik olarak invoke edilirler.
 	@PostConstruct
 	public void init() {
-		System.out.println("Display owners with pets: " + petClinicProperties.isDisplayOwnersWithPets());
+		System.out.println("Configuration access - Display owners with pets: " + petClinicProperties.isDisplayOwnersWithPets());
 	}
 }

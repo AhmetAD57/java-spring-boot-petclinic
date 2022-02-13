@@ -1,2 +1,2 @@
 eclipse.preferences.version=1
-spring.boot.launch.profile.history=dev;-Dspring.profiles.active\=development;-Dspring.profiles.active\=dev;
+spring.boot.launch.profile.history=dev;-Dspring.profiles.active\=dev;-Dspring.profiles.active\=development;
