@@ -11,14 +11,16 @@
 <body>
 	<table>
 		<thead>
-			<tr>
+			<tr style="font-weight: bold;" bgcolor="lightblue">
 				<td>ID</td>
 				<td>First name</td>
 				<td>Last name</td>
 			</tr>
 		</thead>
-		<c:forEach items="${owners}" var="owner">
-			<tr>
+		
+		<!-- jstl tagi foreach -->
+		<c:forEach items="${owners}" var="owner" >
+			<tr>								<!-- <tr bgcolor="${status.index % 2 == 0 'white' : 'lightgray'}"> -->
 				<td>${owner.id}</td>
 				<td>${owner.firstName}</td>
 				<td>${owner.lastName}</td>
