@@ -48,9 +48,6 @@ public class PetClinicRestController {
 		} catch (OwnerNotFoundException e) {
 			return ResponseEntity.notFound().build();  // istenilen requestin sunucuda olmadığının beliritor. (status code: 404)
 		}
-		
-		
-		
 	}
 	
 	

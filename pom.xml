@@ -66,6 +66,21 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
+		
+		<!-- Test için -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>  <!-- Projenin artifact i oluşturulduğunda atrifact in içine dail edilmesi engelleniyor. -->
+		</dependency>
+		
+		<dependency>
+			 <groupId>org.hamcrest</groupId>
+    		<artifactId>hamcrest</artifactId>
+    		<version>2.2</version>
+		</dependency>
+		
+		
 	</dependencies>
 	
 

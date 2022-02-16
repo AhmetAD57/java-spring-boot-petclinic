@@ -21,7 +21,7 @@ public class OwnerRepostoryInMemoryImpl implements OwnerRepostory {
 	public OwnerRepostoryInMemoryImpl() {
 		Owner owner1 = new Owner();
 		owner1.setId(1L);
-		owner1.setFirstName("Cafe");
+		owner1.setFirstName("Cafer");
 		owner1.setLastName("Nuri");
 
 		Owner owner2 = new Owner();
