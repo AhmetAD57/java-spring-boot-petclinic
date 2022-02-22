@@ -1,5 +1,6 @@
 package com.springproject.petclinic.web;
 
+import java.net.URI;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collector;
@@ -24,6 +25,21 @@ public class PetClinicRestControllerTest {
 	public void setUp() {
 		restTemplate = new RestTemplate();
 	}
+	
+	@Test
+	public void testCreateOwner() {
+		Owner owner = new Owner();
+		owner.setFirstName("Richerd");
+		owner.setLastName("Johnson");
+		
+		URI location = restTemplate.postForLocation("http://localhost:8080/rest/owner", owner); // Islem başarılıysa yeni owner kaydının adresinin döner
+		
+		Owner owner2 = restTemplate.getForObject(location, Owner.class);
+		
+		MatcherAssert.assertThat(owner2.getFirstName(), Matchers.equalTo(owner.getFirstName()));
+		MatcherAssert.assertThat(owner2.getLastName(), Matchers.equalTo(owner.getLastName()));
+	}
+	
 	
 	@Test //Junit test anatasyonu kullanılması gerek
 	public void testGetOwnerById() {

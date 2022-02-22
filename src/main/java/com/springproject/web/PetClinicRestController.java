@@ -1,16 +1,20 @@
 package com.springproject.web;
 
+import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.springproject.exception.OwnerNotFoundException;
 import com.springproject.model.Owner;
@@ -25,6 +29,21 @@ import com.springproject.service.PetClinicService;
 public class PetClinicRestController {
 	@Autowired
 	private PetClinicService petClinicService;
+	
+	@RequestMapping(method = RequestMethod.POST, value = "/owner")
+	public ResponseEntity<URI> createOwner(@RequestBody Owner owner){
+		try {
+		petClinicService.createOwner(owner);
+		Long id = owner.getId();
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(id).toUri();
+		
+		return ResponseEntity.created(location).build(); //Status code: 201 döndürür
+		} catch(Exception ex) {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build(); //Status code: 500 döndürür
+		}
+	}
+	
+	
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/owners") //HTTP request metotu belirtiliyor, request URL si belirtiliyor.
 	public ResponseEntity<List<Owner>> getOwners(){
@@ -49,7 +68,4 @@ public class PetClinicRestController {
 			return ResponseEntity.notFound().build();  // istenilen requestin sunucuda olmadığının beliritor. (status code: 404)
 		}
 	}
-	
-	
-	
 }
